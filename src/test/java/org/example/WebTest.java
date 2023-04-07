@@ -59,9 +59,7 @@ public class WebTest {
     @MethodSource
     @ParameterizedTest(name = "По результату поиска запроса {0} должен отображаться список производителей {1}")
     void searchResultByExpectedListManufacturers(String data, List<String> a) {
-        sleep(10000);
         $("#header-search").setValue(data).pressEnter();
         $$(".XkAMv span ._1ZDAA").shouldHave(texts(a));
-        sleep(5000);
     }
 }
