@@ -35,7 +35,6 @@ public class WebTest {
     @ParameterizedTest(name = "В результате поиска в ЯндексМаркет должно отображаться минимум 5 товаров по запросу {0}")
     void searchResultForYandexMarket(String data) {
         $("#header-search").setValue(data).pressEnter();
-        sleep(5000);
         $$("[data-index]").shouldHave(sizeGreaterThanOrEqual(5));
     }
 
